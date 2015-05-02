@@ -46,7 +46,7 @@ socketServer.broadcast = function(data, opts) {
 
 var
   fs = require('fs'),
-  Speaker = require('speaker'),
+//  Speaker = require('speaker'),
 
   Mixer = require('../index.js'),
   wav = require('wav'),
@@ -61,13 +61,13 @@ var mixer = new Mixer({
   channels: 1
 });
 
-var speaker = new Speaker({
+/*var speaker = new Speaker({
   channels: 1,
   bitDepth: 16,
   sampleRate: 44100
-});
+});*/
 
-mixer.pipe(speaker);
+//mixer.pipe(speaker);
 
 /*
  * Decode mp3 and add the stream as mixer input:
