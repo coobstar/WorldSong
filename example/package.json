@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "lame": "*",
-    "speaker": "*",
     "wav": "^1.0.0",
     "ws": "^0.7.1"
   }
