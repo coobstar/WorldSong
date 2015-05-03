@@ -1,0 +1,7 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:10
+
+#EXTINF:112,
+example0.mp3
+#EXTINF:91,
+example1.mp3

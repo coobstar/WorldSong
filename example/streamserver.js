@@ -1,3 +1,5 @@
+var express = require("express");
+var app = express();
 
 if( process.argv.length < 3 ) {
   console.log(
@@ -46,8 +48,6 @@ socketServer.broadcast = function(data, opts) {
 
 var
   fs = require('fs'),
-//  Speaker = require('speaker'),
-
   Mixer = require('../index.js'),
   wav = require('wav')
   ;
@@ -74,7 +74,7 @@ var reader = new wav.Reader();
 
 // the "format" event gets emitted at the end of the WAVE header
 reader.on('format', function (format) {
-
+  console.log(format);
   // the WAVE header is stripped from the output of the reader
   reader.pipe(mixer.input({
     sampleRate: format.sampleRate,
@@ -92,3 +92,11 @@ mixer.on('data', function(chunk) {
 
 
 console.log('Awaiting WebSocket connections on ws://127.0.0.1:'+WEBSOCKET_PORT+'/');
+
+app.get("/", function(req, res) {
+  res.send('WorldSong International v0.1');
+});
+
+app.post("/upload", function(req, res) {
+  res.send('Got a POST request');
+});
